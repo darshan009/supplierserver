@@ -1,0 +1,25 @@
+{
+  "name": "supplierserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darshan009/supplierserver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darshan009/supplierserver/issues"
+  },
+  "homepage": "https://github.com/darshan009/supplierserver#readme",
+  "dependencies": {
+    "connect-mongo": "^0.8.2",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "mongoose": "^4.2.8",
+  }
+}
