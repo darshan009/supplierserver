@@ -6,7 +6,7 @@ var Supplier = require('./models/Supplier');
 var app = express();
 
 //mongoose connection
-mongoose.connect("mongodb://<supply>:<supply123>@ds023500.mlab.com:23500/supply");
+mongoose.connect("mongodb://supply:supply123@ds023500.mlab.com:23500/supply");
 mongoose.connection.on('error', console.error.bind(console, 'connection error'));
 mongoose.connection.once('open', function callback(){
   console.log("Mongoose connected to mongolab");
