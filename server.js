@@ -7,6 +7,7 @@ var app = express();
 
 //mongoose connection
 mongoose.connect("mongodb://supply:supply123@ds023500.mlab.com:23500/supply");
+//mongoose.connect("mongodb://localhost:27017/supply");
 mongoose.connection.on('error', console.error.bind(console, 'connection error'));
 mongoose.connection.once('open', function callback(){
   console.log("Mongoose connected to mongolab");
@@ -29,8 +30,7 @@ app.get('/', function(req, res, next){
      }
      else {
        Supplier.find().exec(function(err, fullList) {
-       //console.log(data);
-       var fullListLength = fullList.length;
+       var fullListLength = fullList.length/10;
        console.log(fullListLength);
         res.render('main', {
            data: data,
