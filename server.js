@@ -15,9 +15,16 @@ mongoose.connection.once('open', function callback(){
 
 app.get('/', function(req, res, next){
   var category = req.query.category;
+  if (req.query.category)
+    category  = {category : {
+      $regex : req.query.category
+    }}
+  else {
+    category = null;
+  }
   var page = parseInt(req.query.page),
      skip = req.param('page') > 0 ? req.param('page') : 0;
-  Supplier.find({category : {$regex : category}}, null, {
+  Supplier.find(category, null, {
      skip: 10 * skip,
      limit: 10
   }, function (err, data) {
