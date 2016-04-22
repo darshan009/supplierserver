@@ -81,7 +81,7 @@ app.get('/supplier', function(req, res, next){
 
 //each suppliers
 app.get('/supplier/:id', function(req, res, next) {
-  Supplier.findOne({id : req.params.id}).exec(function(err, supplier) {
+  Supplier.findById(req.params.id).exec(function(err, supplier) {
     res.send(supplier);
   });
 });
